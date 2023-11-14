@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Document</title>
 </head>
 <body>
+    <input type="text">
+    <button onclick="togglePass()" id="eye">
+        <span id="visi" class="material-symbols-outlined">
+            visibility
+            </span>
+    </button>
     <button onclick="prevColor()">Prev</button>
     <button onclick="nextColor()">Next</button>
     <h1 id="disp"></h1>
@@ -33,6 +40,11 @@
 </html>
 
 <script>
+    
+    let visi = document.getElementById("visi")
+    function togglePass(){
+        visi.innerHTML == "Visibility"? visi.innerHTML ="visibility_off": visi.innerHTML ="Visibility"
+    }
     let colors = ['red', 'blue', 'green', 'tomato']
     let index = 0
     document.body.style.backgroundColor = colors[index];

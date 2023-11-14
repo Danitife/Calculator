@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <style>
+    table, tr, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    table{
+        width: 100%;
+    }
     button{
         background-color: grey;
         width: 100px;
@@ -19,9 +26,9 @@
     button:hover{
         background-color: rgb(129, 121, 121);
     }
-    th{
+    /* th{
         padding: 10px  150px 5px;
-    }
+    } */
 
 </style>
 <body>
@@ -37,8 +44,29 @@
             <td><ol id="userNotpaid"></ol></td>
         </tr>
     </table>
+    <button onclick="dispUser()">All User</button>
+    <button onclick="paidUser()">Paid User</button>
+    <button>Debtors</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Password</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="dispContent">
+            
+        </tbody>
+    </table>
 </body>
 <script>
+
+
+
+
     let users = [
      {
     name : "Adekoya Olasubomi",
@@ -91,6 +119,43 @@
     },
     
   ]
+
+  function dispUser(){
+        dispContent.innerHTML = ""
+        for (let index = 0; index < users.length; index++) {
+            const dan = users[index];
+            dispContent.innerHTML += `
+                <tr>
+                    <td>${dan.name}</td>    
+                    <td>${dan.password}</td>    
+                    <td>${dan.gender}</td>    
+                    <td>${dan.email}</td>    
+                    <td>${dan.paid}</td>    
+                </tr>
+            `
+        }
+    }
+    dispUser();
+
+    function paidUser(){
+        for (let index = 0; index < users.length; index++) {
+            const element = users[index];
+            if(element.paid == true){
+                dispContent.innerHTML += `
+                <tr>
+                    <td>${element.name}</td>    
+                    <td>${element.password}</td>    
+                    <td>${element.gender}</td>    
+                    <td>${element.email}</td>    
+                    <td>${element.paid}</td>    
+                </tr>
+            `
+            }
+            
+        }
+        // paid = users.filter((f)=> f.paid == true);
+        // console.log(paid);
+    }
 
   let {name, password, gender, email, paid} = users
 

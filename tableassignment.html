@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        background-color: grey;
+        width: 100px;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: rgb(129, 121, 121);
+    }
+    th{
+        padding: 10px  150px 5px;
+    }
+
+</style>
+<body>
+    <table border="5">
+        <tr>
+            <th><button onclick="displayNames()">Names<i class="bi bi-caret-down-fill"></i></button></th>
+            <th><button onclick="displayPaid()">Paid<i class="bi bi-caret-down-fill"></i></button></th>
+            <th><button onclick="displayNotpaid()">Not Paid<i class="bi bi-caret-down-fill"></i></button></th>
+        </tr>
+        <tr>
+            <td><ol id="userNames"> </ol></td>
+            <td><ol id="userPaid"></ol></td>
+            <td><ol id="userNotpaid"></ol></td>
+        </tr>
+    </table>
+</body>
+<script>
+    let users = [
+     {
+    name : "Adekoya Olasubomi",
+    password : "123456",
+    gender: "Female",
+    email: "olasubomiceliat@gmailcom",
+    paid: true
+     },
+     {
+    name : "Adebayo Aleem",
+    password : "123456",
+    gender: "Female",
+    email: "olasubomiceliat@gmailcom",
+    paid: false
+    },
+    {
+    name : "Otunsanya Sunmi",
+    password : "123456",
+    gender: "Female",
+    email: "olasubomiceliat@gmailcom",
+    paid: true
+    } ,
+    {
+    name : "Alase waris",
+    password : "123456",
+    gender: "Female",
+    email: "olasubomiceliat@gmailcom",
+    paid: false
+    },
+    {
+    name : "Adebayo Ifeoluwa",
+    password : "123456",
+    gender: "Female",
+    email: "olasubomiceliat@gmailcom",
+    paid: false
+    },
+    {
+    name : "Adebayo Adeniyi",
+    password : "123456",
+    gender: "Female",
+    email: "olasubomiceliat@gmailcom",
+    paid: true
+    },
+    {
+    name : "Adebayo Olasubomi",
+    password : "123456",
+    gender: "Female",
+    email: "olasubomiceliat@gmailcom",
+    paid: true
+    },
+    
+  ]
+
+  let {name, password, gender, email, paid} = users
+
+function displayNames(){
+   
+    users.forEach((item)=>{
+    userNames.innerHTML += "<li>" + item.name + "</li>"
+    return;
+})
+}
+
+ function displayPaid(){
+   
+    users.forEach((item) =>{
+    if(item.paid){
+     userPaid.innerHTML += "<li>" + item.name + "</li>"
+    } 
+})
+}
+
+ function displayNotpaid(){
+
+   users.forEach((item) =>{
+    if(!item.paid){
+    userNotpaid.innerHTML += "<li>" + item.name + "</li>"
+    } 
+})
+}
+</script>
+</html>

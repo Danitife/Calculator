@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="prevColor()">Prev</button>
+    <button onclick="nextColor()">Next</button>
+    <h1 id="disp"></h1>
+    <ul id="showName"></ul>
+</body>
+</html>
+
+<script>
+    let colors = ['red', 'blue', 'green', 'tomato']
+    let index = 0
+    document.body.style.backgroundColor = colors[index];
+
+    function nextColor(){
+        if(index == colors.length -1){
+            index = 0
+        }
+        index++;
+        document.body.style.backgroundColor = colors[index];
+    }
+
+    function prevColor(){
+        if(index == 0){
+            index = colors.length-1
+        }
+        index --;
+        document.body.style.backgroundColor = colors[index];
+    }
+
+    //OBJECT
+    let user = {
+        name: "Daniel",
+        password: "123456",
+        gender: "Male",
+        email: "daniel@gmail.com"
+    }
+
+    let users = [
+        {
+            name: "Daniel",
+            password: "123456",
+            gender: "Male",
+            email: "daniel@gmail.com",
+            paid: true
+        },
+        {
+            name: "Samuel",
+            password: "123456",
+            gender: "Male",
+            email: "daniel@gmail.com",
+            paid: false
+        },
+        {
+            name: "Micheal",
+            password: "123456",
+            gender: "Male",
+            email: "daniel@gmail.com",
+            paid: true
+        },
+        {
+            name: "Victor",
+            password: "123456",
+            gender: "Male",
+            email: "daniel@gmail.com",
+            paid: false
+        }
+    ]
+
+    let names = ['Dan', 'Sam', 'Vic'];
+
+    for(let dan = 0; dan < names.length; dan ++){
+        const el = names[dan];
+        showName.innerHTML += `<li>${el}</li>`
+        // disp.innerHTML += "<p style='color:green;'>"+el+"</p>"
+        // disp.innerHTML += `<p style="color:purple;">${el}</p>`
+    }
+
+    // for(let index = 1; index <= 20; index++){
+    //     disp.innerHTML += 5 * index 
+    // }
+
+    console.log(user.name);
+    console.log(user.email);
+    console.log(user.gender);
+</script>

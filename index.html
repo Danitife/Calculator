@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        /* table{
+            border: 2px solid black;
+            border-collapse: collapse;
+        } */
+        table,
+        th,
+        td {
+            padding: 20px;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="foodItems" type="text"> <br><br>
+    <input id="itemPrice" type="text"> <br><br>
+    <button onclick="tabuletItems()">Submit</button> <br><br>
+
+    <!-- <input type="checkbox"> -->
+
+    <table id="table">
+        <thead id="thead">
+            <th>Food Item</th>
+            <th>Item Price</th>
+            <th>Purchased</th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+</html>
+
+<script>
+    let foodItems = document.getElementById("foodItems")
+    let itemPrice = document.getElementById("itemPrice")
+
+    let luggage = []
+
+   
+
+
+    function tabuletItems(){
+        let myToDo = {
+        foodItems: foodItems.value,
+        itemPrice: itemPrice.value,
+        purchased:  ``
+    }
+    if (
+            foodItems.value == "" ||
+            itemPrice.value == ""
+        ) {
+            alert("A field is empty");
+            return;
+        } else{
+
+        luggage.push(myToDo)
+        console.log(luggage);
+
+    // <td></td>
+        document.getElementById("tbody").innerHTML += ` <tr>
+        <td>${foodItems.value}</td><td>${itemPrice.value}</td><td><input onclick= "purchased" type="checkbox"></td>
+        </tr>`
+        }
+    }
+</script>
